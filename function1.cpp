@@ -1,5 +1,5 @@
 #include<iostream>
 using namespace std;
 void function1() {
-	cout << "hellow";
+	cout << "¼Ó·¨¼ÆËãÆ÷"<<endl;
 }

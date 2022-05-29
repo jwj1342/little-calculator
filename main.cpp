@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include<easyx.h>
-#include"function.h"
+#include"interface.h"
+//#include "click.cpp"
 using namespace std;
 
 int main()
@@ -16,12 +17,17 @@ int main()
 		switch (move.message)
 		{
 		case WM_LBUTTONDOWN:
+			/*
 			if (move.x >= x && move.x <= x + 150 && move.y >= y && move.y <= y + 50) {
 				function1();
 			}
 			if (move.x >= x + jianju_x && move.x <= x + jianju_x + 150 && move.y >= y && move.y <= y + 50) {
 				function2();
 			}
+			*/
+			click(move);
+			//cout << "我被点击辣！！！" << endl;
+			
 			break;
 
 		case WM_KEYDOWN:// 按 ESC 键退出程序
