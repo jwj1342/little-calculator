@@ -1,7 +1,5 @@
-﻿#include <iostream>
-#include<easyx.h>
+﻿#include<easyx.h>
 #include"interface.h"
-//#include "click.cpp"
 using namespace std;
 
 int main()
@@ -10,7 +8,7 @@ int main()
 	{
 		interface_main();
 	}
-	getchar();//保持显示
+	//getchar();//保持显示
 	closegraph();
 	return 0;
 }

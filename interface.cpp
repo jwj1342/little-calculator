@@ -93,6 +93,8 @@ void get_mousemove() {
 		cout << m.x << "  " << m.y << endl;
 	}
 }
+
+
 void click(ExMessage move) {
 	if (move.x >= x && move.x <= x + 150 && move.y >= y && move.y <= y + 50) {
 		function1();
