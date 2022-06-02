@@ -2,7 +2,6 @@
 #include <iostream>
 #include<easyx.h>
 #include "function.h"
-//#include "interface.h"
 using namespace std;
 
 //引用这几个变量，而不是定义
@@ -87,7 +86,13 @@ void setallbox() {
 	bottom(x + jianju_x * 3 + 80, y + jianju_y * 4, 270, 50, "求即被3整除又被5整除的数", 20);
 
 }
-
+void get_mousemove() {
+	ExMessage m;
+	while (1) {
+		m = getmessage(EM_MOUSE | EM_KEY);
+		cout << m.x << "  " << m.y << endl;
+	}
+}
 void click(ExMessage move) {
 	if (move.x >= x && move.x <= x + 150 && move.y >= y && move.y <= y + 50) {
 		function1();
@@ -95,9 +100,17 @@ void click(ExMessage move) {
 	}
 	if (move.x >= x + jianju_x && move.x <= x + jianju_x + 150 && move.y >= y && move.y <= y + 50) {
 		function2();
+		return;
 	}
-}
+	if (move.x >= x + jianju_x * 2 && move.x <= x + x + jianju_x * 2 + 150 && move.y >= y && move.y <= y + 50) {
+		function3();
+		return;
+	}
+	if (move.x >= x + jianju_x * 3 && move.x <= x + x + jianju_x * 3 + 150 && move.y >= y && move.y <= y + 50) {
+		function4();
+	}
 
+}
 
 void interface_main() {
 	initgraph(1200, 660, EW_SHOWCONSOLE);// 初始化图形窗口
@@ -115,9 +128,11 @@ void interface_main() {
 			//cout << "我被点击辣！！！" << endl;
 			return;
 
+		/*
 		case WM_KEYDOWN:// 按 ESC 键退出程序
 			if (move.vkcode == VK_ESCAPE)
 				return;
+		*/
 		default:
 			break;
 		}
@@ -125,10 +140,4 @@ void interface_main() {
 
 }
 
-void get_mousemove() {
-	ExMessage m;
-	while (1) {
-		m = getmessage(EM_MOUSE | EM_KEY);
-		cout << m.x << "  " << m.y << endl;
-	}
-}
+

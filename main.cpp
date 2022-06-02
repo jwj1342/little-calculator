@@ -10,8 +10,6 @@ int main()
 	{
 		interface_main();
 	}
-	
-
 	getchar();//保持显示
 	closegraph();
 	return 0;
