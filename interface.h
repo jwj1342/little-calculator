@@ -19,5 +19,5 @@ void banner_img();
 void setallbox();
 void get_mousemove();
 void click(ExMessage move);
-
+void interface_main();
 #endif

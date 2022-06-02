@@ -1,5 +1,8 @@
+
 #include <iostream>
 #include<easyx.h>
+#include "function.h"
+//#include "interface.h"
 using namespace std;
 
 //引用这几个变量，而不是定义
@@ -13,6 +16,7 @@ void bottom_top(int x, int y, int w, int h, const char* str, int zh) {
 	setbkmode(TRANSPARENT);
 	setfillcolor(RGB(136, 91, 96));
 	fillroundrect(x, y, x + w, y + h, 10, 10);
+	
 
 	settextstyle(zh, 0, "微软雅黑");
 	int tx = x + (w - textwidth(str)) / 2;
@@ -26,7 +30,16 @@ void bottom(int x, int y, int w, int h, const char* str, int zh) {
 	fillroundrect(x, y, x + w, y + h, 10, 10);
 
 	settextcolor(RGB(136, 91, 96));
-	settextstyle(zh, 0, "黑体");
+	settextstyle(zh, 0, "宋体");
+	/*
+	LOGFONT f;//字体样式指针
+	gettextstyle(&f);					//获取字体样式
+	f.lfQuality = ANTIALIASED_QUALITY;    //设置输出效果为抗锯齿					//设置字体大小
+	settextstyle(&f);
+
+	事实证明，开了抗锯齿还不如不开，我笑死
+	*/
+
 	int tx = x + (w - textwidth(str)) / 2;
 	int ty = y + (h - textheight(str)) / 2;
 
@@ -74,6 +87,44 @@ void setallbox() {
 	bottom(x + jianju_x * 3 + 80, y + jianju_y * 4, 270, 50, "求即被3整除又被5整除的数", 20);
 
 }
+
+void click(ExMessage move) {
+	if (move.x >= x && move.x <= x + 150 && move.y >= y && move.y <= y + 50) {
+		function1();
+		return;
+	}
+	if (move.x >= x + jianju_x && move.x <= x + jianju_x + 150 && move.y >= y && move.y <= y + 50) {
+		function2();
+	}
+}
+
+
+void interface_main() {
+	initgraph(1200, 660, EW_SHOWCONSOLE);// 初始化图形窗口
+	banner_img();//图形窗口的图片加载
+	bottom_top(430, 30, 300, 100, "cpp学期大作业", 40);//标题加载
+	setallbox();//每个按钮盒子设计
+	//get_mousemove();//鼠标焦点位置获取
+	ExMessage move;//用来接受鼠标变量
+	while (true) {
+		move = getmessage(EM_MOUSE | EM_KEY);
+		switch (move.message)
+		{
+		case WM_LBUTTONDOWN:
+			click(move);
+			//cout << "我被点击辣！！！" << endl;
+			return;
+
+		case WM_KEYDOWN:// 按 ESC 键退出程序
+			if (move.vkcode == VK_ESCAPE)
+				return;
+		default:
+			break;
+		}
+	}
+
+}
+
 void get_mousemove() {
 	ExMessage m;
 	while (1) {
