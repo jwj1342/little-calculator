@@ -22,7 +22,7 @@
 
 3. `.h`头文件
 
-    `.h`文件实现的功能是声明本文件或`.cpp`文件中需要被别人使用或知道的变量、类型、函数及宏定义等。`.h`文件就像是一个接口，具体的实现可以在`.cpp`中也可以在.h中(网传不推荐)。	
+   `.h`文件实现的功能是声明本文件或`.cpp`文件中需要被别人使用或知道的变量、类型、函数及宏定义等。`.h`文件就像是一个接口，具体的实现可以在`.cpp`中也可以在.h中(网传不推荐)。	
 
    头文件还有一个有意思的是，开头和结尾必须按照以下格式：
 
@@ -38,7 +38,17 @@
 
    原因见此：[浅谈头文件(.h)和源文件(.cpp)的区别](https://www.cnblogs.com/scyq/p/12287140.html)
 
-4. 暂无
+4. 在git同步的时候，出现了以下的问题：
+
+    ```shell
+    发布到远程存储库时遇到错误: Git failed with a fatal error.
+    Git failed with a fatal error.
+    unable to access 'https://github.com/jwj1342/little-calculator.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+    ```
+
+    解决方案是，从这个网站的来的：[解决OpenSSL SSL_read: Connection was reset, errno 10054问题](https://juejin.cn/post/7041207219978764296)，简单来说就是在项目的根目录下`git bash`然后使用命令`git config http.sslVerify false`。
+
+5. 暂无
 
 ### 对个人有帮助的网站：
 
