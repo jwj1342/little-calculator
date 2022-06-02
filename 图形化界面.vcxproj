@@ -132,7 +132,6 @@
     <ClCompile Include="function2.cpp" />
     <ClCompile Include="interface.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="click.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="interface.h" />
