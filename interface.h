@@ -19,6 +19,6 @@ void bottom(int x, int y, int w, int h, const char* str, int zh);
 void banner_img();
 void setallbox();
 void get_mousemove();
-void click(ExMessage move);
+bool click(ExMessage move);
 void interface_main();
 #endif

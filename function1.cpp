@@ -79,6 +79,26 @@ void function4() {
 	return;
 }
 void function5() {
+	cout << "      数字位数计算器开始运行" << endl << "————————————————" << endl;
+	char str[10];
+	InputBox(str, 10, "输入想要计算的数字");
+	closegraph();
+	if (str[0] == '-')
+		cout<<"要求输入的数为正整数！"<<endl;
+	else if (strlen(str) > 3)
+		cout<<"出错！要求输入的数为3位以内的正整数"<<endl;
+	else
+	{
+		if (strlen(str) == 3)
+			printf("该数为3位数，百位是%c，十位是%c，个位是%c\n", str[0], str[1], str[2]);
+		else if (strlen(str) == 2)
+			printf("该数为2位数，十位是%c，个位是%c\n", str[0], str[1]);
+		else
+			printf("该数为1位数，个位是%c\n", str[0]);
+	}
+	cout << "————————————————" << endl << endl << endl;
 
+	cout << "按任意键返回主界面" << endl;
+	getchar();
 	return;
 }

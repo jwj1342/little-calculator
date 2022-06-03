@@ -134,6 +134,9 @@
   <ItemGroup>
     <ClCompile Include="function1.cpp" />
     <ClCompile Include="function2.cpp" />
+    <ClCompile Include="function3.cpp" />
+    <ClCompile Include="function4.cpp" />
+    <ClCompile Include="function5.cpp" />
     <ClCompile Include="interface.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

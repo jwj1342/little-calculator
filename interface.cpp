@@ -9,8 +9,6 @@ extern int banner_x,banner_y;
 extern int jianju_x,jianju_y;
 extern int x,y ;
 
-
-
 void bottom_top(int x, int y, int w, int h, const char* str, int zh) {
 	setbkmode(TRANSPARENT);
 	setfillcolor(RGB(136, 91, 96));
@@ -94,24 +92,142 @@ void get_mousemove() {
 	}
 }
 
+bool click(ExMessage move) {
+	//用于判断是否点击按钮
+	bool clickvalue = false;
 
-void click(ExMessage move) {
+	//第一行按钮绑定
 	if (move.x >= x && move.x <= x + 150 && move.y >= y && move.y <= y + 50) {
+		clickvalue = true;
 		function1();
-		return;
+		//return;
 	}
 	if (move.x >= x + jianju_x && move.x <= x + jianju_x + 150 && move.y >= y && move.y <= y + 50) {
+		clickvalue = true;
 		function2();
-		return;
+		//return;
 	}
 	if (move.x >= x + jianju_x * 2 && move.x <= x + x + jianju_x * 2 + 150 && move.y >= y && move.y <= y + 50) {
+		clickvalue = true;
 		function3();
-		return;
+		//return;
 	}
 	if (move.x >= x + jianju_x * 3 && move.x <= x + x + jianju_x * 3 + 150 && move.y >= y && move.y <= y + 50) {
+		clickvalue = true;
 		function4();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 4 && move.x <= x + x + jianju_x * 4 + 150 && move.y >= y && move.y <= y + 50) {
+		clickvalue = true;
+		function5();
+		//return;
 	}
 
+	//第二行按钮绑定
+	int y_tmp = y + jianju_y;
+	if (move.x >= x && move.x <= x + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function6();
+		//return;
+	}
+	if (move.x >= x + jianju_x && move.x <= x + jianju_x + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function7();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 2 && move.x <= x + x + jianju_x * 2 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function8();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 3 && move.x <= x + x + jianju_x * 3 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function9();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 4 && move.x <= x + x + jianju_x * 4 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function10();
+		//return;
+	}
+
+	//第三行按钮绑定
+	y_tmp = y + jianju_y*2;
+	if (move.x >= x && move.x <= x + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function11();
+		//return;
+	}
+	if (move.x >= x + jianju_x && move.x <= x + jianju_x + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function12();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 2 && move.x <= x + x + jianju_x * 2 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function13();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 3 && move.x <= x + x + jianju_x * 3 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function14();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 4 && move.x <= x + x + jianju_x * 4 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function15();
+		//return;
+	}
+
+	//第四行按钮绑定
+	y_tmp = y + jianju_y * 3;
+	if (move.x >= x && move.x <= x + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function16();
+		//return;
+	}
+	if (move.x >= x + jianju_x && move.x <= x + jianju_x + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function17();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 2 && move.x <= x + x + jianju_x * 2 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function18();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 3 && move.x <= x + x + jianju_x * 3 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function19();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 4 && move.x <= x + x + jianju_x * 4 + 150 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function20();
+		//return;
+	}
+
+	
+	//第五行按钮绑定
+	y_tmp = y + jianju_y * 4;
+	if (move.x >= x  && move.x <= x + 250 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function21();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 2 - 50 && move.x <= x + jianju_x * 2 - 50+270 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function22();
+		//return;
+	}
+	if (move.x >= x + jianju_x * 3 + 80 && move.x <= x + jianju_x * 3 + 80 + 270 && move.y >= y_tmp && move.y <= y_tmp + 50) {
+		clickvalue = true;
+		function23();
+		//return;
+	}
+
+	if (clickvalue) return true;
+	else return false;
 }
 
 void interface_main() {
@@ -126,14 +242,14 @@ void interface_main() {
 		switch (move.message)
 		{
 		case WM_LBUTTONDOWN:
-			click(move);
+			if (click(move)) return;
+			else break;
 			//cout << "我被点击辣！！！" << endl;
-			return;
-
 		/*
 		case WM_KEYDOWN:// 按 ESC 键退出程序
 			if (move.vkcode == VK_ESCAPE)
 				return;
+		
 		*/
 		default:
 			break;

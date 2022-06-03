@@ -11,4 +11,17 @@ void function7();
 void function8();
 void function9();
 void function10();
+void function11();
+void function12();
+void function13();
+void function14();
+void function15();
+void function16();
+void function17();
+void function18();
+void function19();
+void function20();
+void function21();
+void function22();
+void function23();
 #endif
