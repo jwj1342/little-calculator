@@ -49,10 +49,10 @@ void banner_img() {
 	//banner_y = banner.getheight();
 	putimage(0, 0, &banner);
 	IMAGE sign;
-	loadimage(&sign, "./img/sign.jpg", 120, 66);
+	//loadimage(&sign, "./img/sign.jpg", 120, 66);
 	//banner_x = banner.getwidth();
 	//banner_y = banner.getheight();
-	putimage(1080, 600, &sign);
+	//putimage(1080, 600, &sign);
 }
 void setallbox() {
 	bottom(x, y, 150, 50, "¼Ó·¨", 20);
