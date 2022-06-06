@@ -48,10 +48,17 @@
 
     解决方案是，从这个网站的来的：[解决OpenSSL SSL_read: Connection was reset, errno 10054问题](https://juejin.cn/post/7041207219978764296)，简单来说就是在项目的根目录下`git bash`然后使用命令`git config http.sslVerify false`。
 
-5. 暂无
+5. MessageBox函数使用方法：
+
+    MessageBox意为消息盒子，包含在windows.h头文件中。更多见帮助网站第四条。
+
+    
 
 ### 对个人有帮助的网站：
 
-https://zhuanlan.zhihu.com/p/95253745
-https://www.cnblogs.com/rcgn/p/3203332.html
-https://blog.csdn.net/qq_44934156/article/details/119729160
+
+
+1. https://zhuanlan.zhihu.com/p/95253745
+2. https://www.cnblogs.com/rcgn/p/3203332.html
+3. https://blog.csdn.net/qq_44934156/article/details/119729160
+4. https://blog.csdn.net/liuzich/article/details/107818270
