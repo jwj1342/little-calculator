@@ -1,8 +1,9 @@
 #include<iostream>
+#include<stdlib.h>
 #include <easyx.h>
 #include<algorithm>
+//#include<time.h>
 using namespace std;
-
 //从这开始是静态链表的程序
 int avi = 0;
 struct node2 {
@@ -54,7 +55,8 @@ void function16() {
 	InputBox(a, 10, "输入原始链表长度");
 	closegraph();
 	int c = atoi(a);
-	int place, x;
+	//int place, x;
+	int x;
 	bool back = false;
 	cout << "请输入原始链表：";
 	for (int i = 1; i <= c; i++) {
@@ -298,5 +300,38 @@ void function19() {
 }
 
 void function20() {
+	cout << "      学生成绩增长器开始运行" << endl << "————————————————" << endl;
+	char a[10];
+	InputBox(a, 10, "学生成绩涨多少分？");
+	int c = atoi(a);
+	closegraph();
+	int tmp[11];
+	system("dir d:");
+	cout << endl<<endl;
+	cout << "上面，是否在D盘根目录存在学生数据文件？(y/n)";
+	char choice;
+	cin >> choice;
+	if (choice!='y')
+	{
+		cout << "请在D盘目录下放入学生数据文件，10个。";
+		cout << "————————————————" << endl << endl << endl;
+		return;
+	}
+
+	FILE* fp;
+	fp = fopen("d:\\my.txt", "r+");
+	for (int i = 1; i <= 10; i++) {
+		fscanf(fp, "%d", &tmp[i]);
+	}
+	rewind(fp);
+	for (int i = 1; i <= 10; i++) {
+		fprintf(fp, "%d\n", tmp[i] + c);
+	}
+	fclose(fp);
+	cout << "处理已完成"<<endl;
+	cout << "————————————————" << endl << endl << endl;
+	system("pause");
 	
+	getchar();
+	return;
 }
